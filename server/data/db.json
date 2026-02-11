@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "brand": "Varsha Ayurveda",
+    "address": "35-A, Parash Nagar Bearasiya Road, Bhopal - 462038",
+    "catalogue": "Catalouge.pdf"
+  },
+  "products": [
+    {
+      "id": "strong-mushroom-powder",
+      "name": "DRL Strong Mushroom Powder",
+      "brand": "Varsha Ayurveda",
+      "category": "Powder",
+      "pack": "100 gm",
+      "price": 1575,
+      "image": "/images/strong_mushroom_powder.png",
+      "shortDescription": "Mushroom-based powder (label shows “Mushroom Soup Powder”).",
+      "tags": [
+        "mushroom",
+        "powder"
+      ]
+    },
+    {
+      "id": "pilo-care-capsules",
+      "name": "Pilo Care Capsules",
+      "brand": "Varsha Ayurveda",
+      "category": "Capsules",
+      "pack": "30 capsules",
+      "price": 195,
+      "image": "/images/pilo_care_capsules.png",
+      "shortDescription": "Ayurvedic capsules (catalogue label: “Cure of Pilo”).",
+      "tags": [
+        "capsules"
+      ]
+    },
+    {
+      "id": "strong-stone-remover-syrup",
+      "name": "Strong Stone Remover Syrup",
+      "brand": "Varsha Ayurveda",
+      "category": "Syrup",
+      "pack": "200 ml",
+      "price": 505,
+      "image": "/images/strong_stone_remover_syrup.png",
+      "shortDescription": "Syrup positioned for stone removal support.",
+      "tags": [
+        "syrup"
+      ]
+    },
+    {
+      "id": "strong-stone-remover-powder",
+      "name": "Strong Stone Remover Powder",
+      "brand": "Varsha Ayurveda",
+      "category": "Powder",
+      "pack": "50 g",
+      "price": 505,
+      "image": "/images/strong_stone_remover_powder.png",
+      "shortDescription": "Powder positioned for stone removal support.",
+      "tags": [
+        "powder"
+      ]
+    },
+    {
+      "id": "relaxo-massage-oil",
+      "name": "Relaxo Massage Oil",
+      "brand": "Varsha Ayurveda",
+      "category": "Oil",
+      "pack": "30 ml",
+      "price": 80,
+      "image": "/images/relaxo_massage_oil.png",
+      "shortDescription": "Massage oil (pack listed as 30 ml in catalogue).",
+      "tags": [
+        "oil",
+        "massage"
+      ]
+    },
+    {
+      "id": "leuco-care-capsules",
+      "name": "Leuco Care Capsules",
+      "brand": "Varsha Ayurveda",
+      "category": "Capsules",
+      "pack": "30 capsules",
+      "price": 350,
+      "image": "/images/leuco_care_capsules.png",
+      "shortDescription": "Capsules (label shows “Stop the Leucorrhoea”).",
+      "tags": [
+        "capsules"
+      ]
+    },
+    {
+      "id": "v-guard-marham",
+      "name": "V-Guard Marham",
+      "brand": "Varsha Ayurveda",
+      "category": "Topical",
+      "pack": "25 g",
+      "price": 45,
+      "image": "/images/v_guard_marham.png",
+      "shortDescription": "Marham/ointment (pack listed as 25 g in catalogue).",
+      "tags": [
+        "ointment",
+        "topical"
+      ]
+    },
+    {
+      "id": "v-guard-lotion",
+      "name": "V-Guard Lotion",
+      "brand": "Varsha Ayurveda",
+      "category": "Topical",
+      "pack": "20 g",
+      "price": 66,
+      "image": "/images/v_guard_lotion.png",
+      "shortDescription": "Lotion (pack listed as 20 g in catalogue).",
+      "tags": [
+        "lotion",
+        "topical"
+      ]
+    },
+    {
+      "id": "hajma-strong-syrup",
+      "name": "Hajma Strong Syrup",
+      "brand": "Varsha Ayurveda",
+      "category": "Syrup",
+      "pack": "200 ml",
+      "price": 196,
+      "image": "/images/hajma_strong_syrup.png",
+      "shortDescription": "Digestive syrup (pack shown as 200 ml).",
+      "tags": [
+        "syrup",
+        "digestive"
+      ]
+    },
+    {
+      "id": "mushroom-hair-oil",
+      "name": "Mushroom Hair Oil",
+      "brand": "Varsha Ayurveda",
+      "category": "Oil",
+      "pack": "100 ml",
+      "price": 220,
+      "currency": "INR",
+      "image": "/images/mushroom_hair_oil.png",
+      "shortDescription": "Hair oil. Bottle label shows MRP Rs. 220 (as visible on pack).",
+      "tags": [
+        "hair",
+        "oil"
+      ]
+    },
+    {
+      "id": "ashrafi-lotion",
+      "name": "Ashrafi Lotion",
+      "brand": "Varsha Ayurveda",
+      "category": "Topical",
+      "pack": "30 ml",
+      "price": 55,
+      "image": "/images/ashrafi_lotion.png",
+      "shortDescription": "Lotion made from extract of Neem (as shown on pack).",
+      "tags": [
+        "lotion",
+        "neem"
+      ]
+    },
+    {
+      "id": "musaffi-hayat-syrup",
+      "name": "Musaffi Hayat Syrup",
+      "brand": "Varsha Ayurveda",
+      "category": "Syrup",
+      "pack": "200 ml",
+      "price": 120,
+      "image": "/images/musaffi_hayat_syrup.png",
+      "shortDescription": "Syrup labelled as a natural blood purifier (as shown on pack).",
+      "tags": [
+        "syrup"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord_Di6WniMjGL",
+      "userId": "usr_hjsHi8vLBl",
+      "createdAt": "2026-02-11T10:53:56.965Z",
+      "updatedAt": "2026-02-11T10:57:30.849Z",
+      "status": "DELIVERED",
+      "payment": {
+        "method": "COD",
+        "status": "PAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": "2026-02-11T10:57:30.849Z"
+      },
+      "customer": {
+        "name": "manoj Ahirwar",
+        "phone": "09074268203",
+        "email": "mkumar363@gmail.com",
+        "address": "ARIHANT PARISAR SECTOR 2\nPLOT 37"
+      },
+      "items": [
+        {
+          "productId": "pilo-care-capsules",
+          "qty": 2,
+          "name": "Pilo Care Capsules",
+          "pack": "30 capsules",
+          "price": 195,
+          "currency": null
+        }
+      ],
+      "total": 390,
+      "currency": "INR"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_hjsHi8vLBl",
+      "name": "manoj Ahirwar",
+      "email": "mkumar363@gmail.com",
+      "role": "customer",
+      "passwordHash": "$2a$10$c5whMhzBvlTK5eD.q6HtHemiPOb/ehFnN93OxfKpY7DHZFyZxfG.y",
+      "createdAt": "2026-02-11T10:53:04.688Z",
+      "updatedAt": "2026-02-11T10:53:04.688Z"
+    },
+    {
+      "id": "usr_qg8I8wvucW",
+      "name": "vidit",
+      "email": "vidit@gmail.com",
+      "role": "admin",
+      "passwordHash": "$2a$10$vpH3QgFLdlwq4uBBaNjYSulIZNTbT8n6jwKcyWoxDr55ak04Jfcny",
+      "createdAt": "2026-02-11T10:42:27.271Z",
+      "updatedAt": "2026-02-11T10:42:27.271Z"
+    }
+  ]
+}
