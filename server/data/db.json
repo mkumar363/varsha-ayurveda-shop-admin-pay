@@ -172,6 +172,138 @@
   ],
   "orders": [
     {
+      "id": "ord_41hJ5vSciJ",
+      "userId": "usr_bfswllui74",
+      "createdAt": "2026-02-14T03:06:41.551Z",
+      "updatedAt": "2026-02-14T03:06:41.552Z",
+      "status": "PLACED",
+      "payment": {
+        "method": "COD",
+        "status": "UNPAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": null
+      },
+      "customer": {
+        "name": "Manvik Ahirwar",
+        "phone": "09074268203",
+        "email": "manvik@gmail.com",
+        "address": "Richmond tower\nFlat no 031 British park opposite IPER college"
+      },
+      "items": [
+        {
+          "productId": "pilo-care-capsules",
+          "qty": 2,
+          "name": "Pilo Care Capsules",
+          "pack": "30 capsules",
+          "price": 195,
+          "currency": null
+        }
+      ],
+      "total": 390,
+      "currency": "INR"
+    },
+    {
+      "id": "ord_Ha-tb8O88m",
+      "userId": "usr_bfswllui74",
+      "createdAt": "2026-02-11T16:16:56.112Z",
+      "updatedAt": "2026-02-11T16:16:56.112Z",
+      "status": "PLACED",
+      "payment": {
+        "method": "COD",
+        "status": "UNPAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": null
+      },
+      "customer": {
+        "name": "Manvik Ahirwar",
+        "phone": "09074268203",
+        "email": "manvik@gmail.com",
+        "address": "Richmond tower\nFlat no 031 British park opposite IPER college"
+      },
+      "items": [
+        {
+          "productId": "strong-stone-remover-syrup",
+          "qty": 1,
+          "name": "Strong Stone Remover Syrup",
+          "pack": "200 ml",
+          "price": 505,
+          "currency": null
+        }
+      ],
+      "total": 505,
+      "currency": "INR"
+    },
+    {
+      "id": "ord_piRfbYsvTc",
+      "userId": "usr_hjsHi8vLBl",
+      "createdAt": "2026-02-11T16:13:40.287Z",
+      "updatedAt": "2026-02-11T16:13:40.287Z",
+      "status": "PLACED",
+      "payment": {
+        "method": "COD",
+        "status": "UNPAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": null
+      },
+      "customer": {
+        "name": "manoj Ahirwar",
+        "phone": "09074268203",
+        "email": "mkumar363@gmail.com",
+        "address": "ARIHANT PARISAR SECTOR 2\nPLOT 37"
+      },
+      "items": [
+        {
+          "productId": "pilo-care-capsules",
+          "qty": 1,
+          "name": "Pilo Care Capsules",
+          "pack": "30 capsules",
+          "price": 195,
+          "currency": null
+        }
+      ],
+      "total": 195,
+      "currency": "INR"
+    },
+    {
+      "id": "ord_5JV1PmEm8h",
+      "userId": "usr_hjsHi8vLBl",
+      "createdAt": "2026-02-11T16:09:47.252Z",
+      "updatedAt": "2026-02-11T16:11:06.456Z",
+      "status": "PROCESSING",
+      "payment": {
+        "method": "COD",
+        "status": "PAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": "2026-02-11T16:10:57.642Z"
+      },
+      "customer": {
+        "name": "manoj Ahirwar",
+        "phone": "09074268203",
+        "email": "mkumar363@gmail.com",
+        "address": "ARIHANT PARISAR SECTOR 2\nPLOT 37"
+      },
+      "items": [
+        {
+          "productId": "strong-mushroom-powder",
+          "qty": 1,
+          "name": "DRL Strong Mushroom Powder",
+          "pack": "100 gm",
+          "price": 1575,
+          "currency": null
+        }
+      ],
+      "total": 1575,
+      "currency": "INR"
+    },
+    {
       "id": "ord_Di6WniMjGL",
       "userId": "usr_hjsHi8vLBl",
       "createdAt": "2026-02-11T10:53:56.965Z",
@@ -206,6 +338,15 @@
     }
   ],
   "users": [
+    {
+      "id": "usr_bfswllui74",
+      "name": "Manvik Ahirwar",
+      "email": "manvik@gmail.com",
+      "role": "customer",
+      "passwordHash": "$2a$10$wMe7IB4D/M.3xI5CAxL1kOgGHcV2zEhBZ4vCfj3c5Mxur4xe.1AfK",
+      "createdAt": "2026-02-11T16:16:18.636Z",
+      "updatedAt": "2026-02-11T16:16:18.636Z"
+    },
     {
       "id": "usr_hjsHi8vLBl",
       "name": "manoj Ahirwar",

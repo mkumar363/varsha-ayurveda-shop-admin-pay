@@ -55,7 +55,7 @@ export function AdminProductsPage() {
         name: form.name,
         category: form.category,
         pack: form.pack,
-        price: form.price === "" ? null : form.price,
+        price: form.price === null ? null : form.price,
         currency: form.currency,
         image: form.image,
         shortDescription: form.shortDescription,
