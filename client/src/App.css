@@ -1,1 +1,33 @@
 /* unused (styles in src/styles.css) */
+.menuBtn {
+  display: none;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .menuBtn { display: inline-flex; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 180px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+  .nav.nav--open { display: flex; }
+
+  .header__inner { position: relative; }
+}
+

@@ -339,6 +339,15 @@
   ],
   "users": [
     {
+      "id": "usr_Obw5KG4ava",
+      "name": "Ram sharma",
+      "email": "ram@gmail.com",
+      "role": "customer",
+      "passwordHash": "$2a$10$WtOvK5HiWcP/2z0gYxgh5OYJYh7YZAW8sFmvAElRbEJ6rn8BGM3DG",
+      "createdAt": "2026-02-14T03:22:17.563Z",
+      "updatedAt": "2026-02-14T03:22:17.563Z"
+    },
+    {
       "id": "usr_bfswllui74",
       "name": "Manvik Ahirwar",
       "email": "manvik@gmail.com",

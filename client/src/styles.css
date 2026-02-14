@@ -7,6 +7,26 @@
   color: #1a1a1a;
   background: #ffffff;
 }
+/* container already ok, but ensure padding scales */
+.container {
+  width: min(1100px, 100%);
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* grid should adapt */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
 
 * { box-sizing: border-box; }
 body { margin: 0; }
@@ -207,3 +227,4 @@ a:hover { text-decoration: underline; }
   gap: 10px;
   margin-top: 12px;
 }
+
