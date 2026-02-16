@@ -1,4 +1,10 @@
-/* unused (styles in src/styles.css) */
+/* Desktop nav */
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .menuBtn {
   display: none;
   border: 1px solid #ddd;
@@ -9,25 +15,35 @@
   cursor: pointer;
 }
 
+/* Mobile: nav is hidden by default */
 @media (max-width: 720px) {
-  .menuBtn { display: inline-flex; }
+  .menuBtn {
+    display: inline-flex;
+  }
 
-  .nav {
+  .header__inner {
+    position: relative;
+  }
+
+  /* Hide menu by default */
+  .header .nav {
     display: none;
     position: absolute;
     right: 16px;
     top: 60px;
     background: #fff;
     border: 1px solid #eee;
-    border-radius: 14px;
-    padding: 10px;
+    border-radius: 16px;
+    padding: 14px;
     flex-direction: column;
-    gap: 10px;
-    min-width: 180px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    gap: 12px;
+    min-width: 200px;
+    z-index: 50;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
   }
-  .nav.nav--open { display: flex; }
 
-  .header__inner { position: relative; }
+  /* Show menu only when header has the open class */
+  .header.header--menu-open .nav {
+    display: flex;
+  }
 }
-

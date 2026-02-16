@@ -1,9 +1,9 @@
-// client/src/App.tsx
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { useCart } from "./cart/CartContext";
 import { useAuth } from "./auth/AuthContext";
 import "./App.css";
+
 export default function App() {
   const cart = useCart();
   const auth = useAuth();
@@ -11,53 +11,55 @@ export default function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // close mobile menu on route change
+  const closeMenu = () => setMenuOpen(false);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  // close menu on route change
   useEffect(() => {
-    setMenuOpen(false);
+    closeMenu();
   }, [location.pathname]);
 
   const isAdmin = useMemo(() => auth.user?.role === "admin", [auth.user?.role]);
 
   return (
     <div className="app">
-      <header className="header">
+      <header className={`header ${menuOpen ? "header--menu-open" : ""}`}>
         <div className="container header__inner">
-          <Link to="/" className="brand" aria-label="Go to home">
+          <Link to="/" className="brand" onClick={closeMenu} aria-label="Go to home">
             <span className="brand__name">Varsha Ayurveda</span>
             <span className="brand__tag muted">Store</span>
           </Link>
 
-          {/* Mobile menu button */}
+          {/* toggle button */}
           <button
             className="menuBtn"
             type="button"
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
+            aria-controls="main-nav"
           >
             ☰
           </button>
 
-          {/* Nav */}
-          <nav className={`nav ${menuOpen ? "nav--open" : ""}`} aria-label="Main navigation">
-            <Link to="/" className="nav__link">
+          {/* nav */}
+          <nav id="main-nav" className="nav" aria-label="Main navigation">
+            <Link to="/" className="nav__link" onClick={closeMenu}>
               Products
             </Link>
 
-            <Link to="/cart" className="nav__link">
+            <Link to="/cart" className="nav__link" onClick={closeMenu}>
               Cart <span className="badge">{cart.count}</span>
             </Link>
 
             {auth.user ? (
               <>
-                {/* Admin link */}
                 {isAdmin ? (
-                  <Link to="/admin" className="nav__link">
+                  <Link to="/admin" className="nav__link" onClick={closeMenu}>
                     Admin
                   </Link>
                 ) : null}
 
-                {/* User display */}
                 <span className="nav__text">
                   Hi, <strong>{auth.user.name}</strong>
                 </span>
@@ -65,17 +67,20 @@ export default function App() {
                 <button
                   type="button"
                   className="btn btn--ghost"
-                  onClick={() => auth.logout()}
+                  onClick={() => {
+                    auth.logout();
+                    closeMenu();
+                  }}
                 >
                   Logout
                 </button>
               </>
             ) : (
               <>
-                <Link to="/login" className="nav__link">
+                <Link to="/login" className="nav__link" onClick={closeMenu}>
                   Login
                 </Link>
-                <Link to="/signup" className="btn">
+                <Link to="/signup" className="btn" onClick={closeMenu}>
                   Sign up
                 </Link>
               </>
@@ -94,7 +99,6 @@ export default function App() {
             Mfg. For: <strong>Varsha Ayurveda</strong> — 35-A, Parash Nagar Bearasiya Road,
             Bhopal - 462038
           </div>
-          <div className="muted small">Demo e-commerce site built with React + Vite.</div>
         </div>
       </footer>
     </div>
