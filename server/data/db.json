@@ -172,6 +172,39 @@
   ],
   "orders": [
     {
+      "id": "ord_onhVT18TEG",
+      "userId": "usr_Obw5KG4ava",
+      "createdAt": "2026-02-16T10:17:35.206Z",
+      "updatedAt": "2026-02-16T10:17:35.206Z",
+      "status": "PLACED",
+      "payment": {
+        "method": "COD",
+        "status": "UNPAID",
+        "provider": null,
+        "providerOrderId": null,
+        "providerPaymentId": null,
+        "verifiedAt": null
+      },
+      "customer": {
+        "name": "Ram sharma",
+        "phone": "8770273840",
+        "email": "ram@gmail.com",
+        "address": "Richmond tower\nFlat no 031 British park opposite IPER college"
+      },
+      "items": [
+        {
+          "productId": "strong-mushroom-powder",
+          "qty": 1,
+          "name": "DRL Strong Mushroom Powder",
+          "pack": "100 gm",
+          "price": 1575,
+          "currency": null
+        }
+      ],
+      "total": 1575,
+      "currency": "INR"
+    },
+    {
       "id": "ord_41hJ5vSciJ",
       "userId": "usr_bfswllui74",
       "createdAt": "2026-02-14T03:06:41.551Z",
