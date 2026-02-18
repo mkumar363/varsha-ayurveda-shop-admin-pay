@@ -20,27 +20,15 @@ const allowlist = (process.env.CORS_ORIGIN || "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-const corsOptions = {
-  origin: (origin, cb) => {
-    // Postman/curl me origin null hota hai
-    if (!origin) return cb(null, true);
+app.use(
+  cors({
+    origin: allowlist.length ? allowlist : true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-admin-key"],
+  })
+);
 
-    // If env not set => allow all (easy mode)
-    if (allowlist.length === 0) return cb(null, true);
-
-    // Allow only listed origins
-    if (allowlist.includes(origin)) return cb(null, true);
-
-    // Block others
-    return cb(null, false);
-  },
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "x-admin-key"],
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // ✅ preflight support
+app.options("*", cors());
 
 app.use(express.json({ limit: "1mb" }));
 
