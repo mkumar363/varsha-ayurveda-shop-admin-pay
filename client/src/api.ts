@@ -1,7 +1,7 @@
 import type { AuthResponse, MeResponse, Order, OrderCustomer, OrderItemInput, Product, SalesSummary } from "./types";
 
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000" ;
+  // const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000" ;
 
 
 const AUTH_TOKEN_KEY = "varshaAyurveda.authToken.v1";
@@ -32,7 +32,7 @@ type ProductsResponse = {
 
 async function http<T>(path: string, init?: RequestInit): Promise<T> {
   const token = getToken();
-  const res = await fetch(`${API_BASE_URL}${path}`, {
+  const res = await fetch(`https://varsha-ayurveda-shop-admin-pay.onrender.com${path}`, {
     ...init,
     headers: {
       "Content-Type": "application/json",
