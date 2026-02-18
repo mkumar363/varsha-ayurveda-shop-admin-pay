@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+//const cors = require("cors");
 const dotenv = require("dotenv");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
@@ -15,11 +15,33 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(",") : true,
-  })
-);
+const allowlist = (process.env.CORS_ORIGIN || "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+const corsOptions = {
+  origin: (origin, cb) => {
+    // Postman/curl me origin null hota hai
+    if (!origin) return cb(null, true);
+
+    // If env not set => allow all (easy mode)
+    if (allowlist.length === 0) return cb(null, true);
+
+    // Allow only listed origins
+    if (allowlist.includes(origin)) return cb(null, true);
+
+    // Block others
+    return cb(null, false);
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "x-admin-key"],
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // ✅ preflight support
+
 app.use(express.json({ limit: "1mb" }));
 
 // Attach req.user if a Bearer token exists.
