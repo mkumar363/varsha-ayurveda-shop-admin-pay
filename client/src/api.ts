@@ -1,7 +1,7 @@
 import type { AuthResponse, MeResponse, Order, OrderCustomer, OrderItemInput, Product, SalesSummary } from "./types";
 
 
-  const API_BASE_URL = 'https://varsha-ayurveda-shop-admin-pay.onrender.com';
+  const API_BASE_URL = 'https://varsha-ayurveda-shop-admin-pay-3.onrender.com';
     //import.meta.env.VITE_API_BASE_URL || "http://localhost:4000" ;
 
 
