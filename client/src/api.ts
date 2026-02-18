@@ -1,11 +1,14 @@
-import type { AuthResponse, MeResponse, Order, OrderCustomer, OrderItemInput, Product, SalesSummary } from "./types";
+import type {
+  AuthResponse,
+  MeResponse,
+  Order,
+  OrderCustomer,
+  OrderItemInput,
+  Product,
+  SalesSummary,
+} from "./types";
 
-
-
-  const API_BASE_URL = 'https://varsha-ayurveda-shop-admin-pay-3.onrender.com';
-  
-
-
+const API_BASE_URL = "https://varsha-ayurveda-shop-admin-pay-3.onrender.com";
 
 const AUTH_TOKEN_KEY = "varshaAyurveda.authToken.v1";
 
@@ -33,15 +36,27 @@ type ProductsResponse = {
   items: Product[];
 };
 
-async function http<T>(path: string, init?: RequestInit): Promise<T> {
+async function http<T>(path: string, init: RequestInit = {}): Promise<T> {
   const token = getToken();
-  const res = await fetch(`${API_BASE_URL}${path}`, {
+
+  // ✅ Works with Headers / object / undefined
+  const headers = new Headers(init.headers);
+
+  // ✅ Don't send Content-Type on GET (avoids CORS preflight)
+  if (init.body != null && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
+
+  if (token && !headers.has("Authorization")) {
+    headers.set("Authorization", `Bearer ${token}`);
+  }
+
+  // ✅ Safe URL join (no //api/... issues)
+  const url = new URL(path, API_BASE_URL).toString();
+
+  const res = await fetch(url, {
     ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...(init?.headers || {}),
-    },
+    headers,
   });
 
   if (!res.ok) {
@@ -77,7 +92,6 @@ async function http<T>(path: string, init?: RequestInit): Promise<T> {
 
   return (await res.json()) as T;
 }
-
 
 export async function fetchProducts(params?: {
   q?: string;
@@ -118,16 +132,22 @@ export async function fetchMyOrders(): Promise<{ items: Order[] }> {
   return http<{ items: Order[] }>("/api/my/orders");
 }
 
-
 // ----- AUTH -----
-export async function signup(input: { name: string; email: string; password: string }): Promise<AuthResponse> {
+export async function signup(input: {
+  name: string;
+  email: string;
+  password: string;
+}): Promise<AuthResponse> {
   return http<AuthResponse>("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify(input),
   });
 }
 
-export async function login(input: { email: string; password: string }): Promise<AuthResponse> {
+export async function login(input: {
+  email: string;
+  password: string;
+}): Promise<AuthResponse> {
   return http<AuthResponse>("/api/auth/login", {
     method: "POST",
     body: JSON.stringify(input),
@@ -145,7 +165,10 @@ export async function logout(): Promise<{ ok: true }> {
 }
 
 // ----- ADMIN -----
-export async function adminFetchOrders(params?: { q?: string; status?: string }): Promise<{ items: Order[] }> {
+export async function adminFetchOrders(params?: {
+  q?: string;
+  status?: string;
+}): Promise<{ items: Order[] }> {
   const usp = new URLSearchParams();
   if (params?.q) usp.set("q", params.q);
   if (params?.status) usp.set("status", params.status);
@@ -198,7 +221,10 @@ export async function adminDeleteProduct(id: string): Promise<{ ok: true }> {
 export async function razorpayCreateOrder(input: {
   customer: OrderCustomer;
   items: OrderItemInput[];
-}): Promise<{ orderId: string; razorpay: { keyId: string; orderId: string; amount: number; currency: string } }> {
+}): Promise<{
+  orderId: string;
+  razorpay: { keyId: string; orderId: string; amount: number; currency: string };
+}> {
   return http(`/api/payments/razorpay/create-order`, {
     method: "POST",
     body: JSON.stringify(input),
