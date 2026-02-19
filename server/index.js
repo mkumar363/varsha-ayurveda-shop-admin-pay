@@ -36,6 +36,7 @@ app.use(
 
 app.options("*", cors());
 
+console.log("CORS_ORIGIN =", JSON.stringify(process.env.CORS_ORIGIN));
 
 
 app.use(express.json({ limit: "1mb" }));
