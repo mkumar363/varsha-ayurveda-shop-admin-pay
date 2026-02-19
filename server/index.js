@@ -17,16 +17,24 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
 
 const allowlist = (process.env.CORS_ORIGIN || "")
   .split(",")
-  .map((s) => s.trim())
+  .map((s) => s.trim().replace(/\/$/, "")) // trim + remove trailing slash
   .filter(Boolean);
 
 app.use(
   cors({
-    origin: allowlist.length ? allowlist : true,
+    origin: (origin, cb) => {
+      if (!origin) return cb(null, true); // Postman/curl
+      const o = origin.trim().replace(/\/$/, "");
+      if (allowlist.length === 0) return cb(null, true); // if env not set => allow all
+      return cb(null, allowlist.includes(o));
+    },
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "x-admin-key"],
+    optionsSuccessStatus: 204,
   })
 );
+
+app.options("*", cors());
 
 app.options("*", cors());
 
